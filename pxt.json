@@ -1,5 +1,5 @@
 {
-    "name": "Controlador robot 2",
+    "name": "Controlador robot ",
     "description": "",
     "dependencies": {
         "core": "*",

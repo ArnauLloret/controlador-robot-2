@@ -1,6 +1,7 @@
 let Y = 0
 let X = 0
 led.plot(2, 2)
+radio.setGroup(1)
 basic.forever(function () {
     X = input.acceleration(Dimension.X)
     Y = input.acceleration(Dimension.Y)
@@ -32,19 +33,6 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    if (Y < 200) {
-        led.unplot(2, 3)
-        led.unplot(2, 4)
-    }
-    if (Y > 200) {
-        led.plot(2, 3)
-        led.unplot(3, 2)
-    }
-    if (Y > 200) {
-        led.plot(2, 4)
-    }
-})
-basic.forever(function () {
     if (Y > -200) {
         led.unplot(2, 1)
         led.unplot(2, 0)
@@ -55,5 +43,18 @@ basic.forever(function () {
     }
     if (Y < -200) {
         led.plot(2, 1)
+    }
+})
+basic.forever(function () {
+    if (Y < 200) {
+        led.unplot(2, 3)
+        led.unplot(2, 4)
+    }
+    if (Y > 200) {
+        led.plot(2, 3)
+        led.unplot(3, 2)
+    }
+    if (Y > 200) {
+        led.plot(2, 4)
     }
 })
